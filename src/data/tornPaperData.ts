@@ -1,0 +1,1346 @@
+import { TornPaperStyle } from '../types/tornPaper';
+
+export interface TornPaperCategory {
+  id: 'exclusive' | 'basic' | 'edge-fiber' | 'layered-collage' | 'materials' | 'advanced';
+  titleBn: string;
+  titleEn: string;
+  range: string;
+  descriptionBn: string;
+}
+
+export const TORN_PAPER_CATEGORIES: TornPaperCategory[] = [
+  {
+    id: 'exclusive',
+    titleBn: '⭐ এক্সক্লুসিভ স্টাইল (Exclusive Styles)',
+    titleEn: 'Exclusive Pro Styles',
+    range: '৭টি প্রো স্টাইল',
+    descriptionBn: 'ভেক্টর কাটআউট ফ্রেম, ডেক্ল এজ, হোয়াইট কোর, পাংচার্ড হোল, ক্রাফট কার্ডবোর্ড, ৩D কার্লড ব্যানার ও রিপড উইন্ডো।'
+  },
+  {
+    id: 'basic',
+    titleBn: '১. বেসিক স্টাইল (Basic Styles)',
+    titleEn: 'Basic Torn Paper Styles',
+    range: '১–১০',
+    descriptionBn: 'ক্লাসিক ছেঁড়া কাগজ, অনুভূমিক ও উল্লম্ব স্ট্রিপ, ফ্র্যাগমেন্ট, ভাঁজ ও বাঁকানো টুকরা।'
+  },
+  {
+    id: 'edge-fiber',
+    titleBn: '২. এজ ও ফাইবার (Edge & Fiber)',
+    titleEn: 'Edge & Fiber Styles',
+    range: '১১–২০',
+    descriptionBn: 'সূক্ষ্ম ও দীর্ঘ কাগজের তন্তু (Fiber), ধারালো জ্যাগড খাঁজ, ডেকেল এজ ও ডিরেকশনাল ফাইবার।'
+  },
+  {
+    id: 'layered-collage',
+    titleBn: '৩. লেয়ার্ড ও কোলাজ (Layered & Collage)',
+    titleEn: 'Layered & Collage Styles',
+    range: '২১–৩০',
+    descriptionBn: 'দ্বি-স্তর ও ত্রি-স্তর স্ট্যাক, ফ্রেম বর্ডার, উইন্ডো, ওভারল্যাপিং স্ট্রিপ ও পিলিং কর্নার।'
+  },
+  {
+    id: 'materials',
+    titleBn: '৪. পেপার ম্যাটেরিয়াল (Paper Materials)',
+    titleEn: 'Paper Material & Color Styles',
+    range: '৩১–৪০',
+    descriptionBn: 'হোয়াইট কপিয়ার, ক্রিম, ক্রাফট পেপার, রিসাইকেলড, ম্যাট ব্ল্যাক, নিউজপ্রিন্ট ও কটন পেপার।'
+  },
+  {
+    id: 'advanced',
+    titleBn: '৫. অ্যাডভান্সড রিয়ালিস্টিক (Advanced Photoreal)',
+    titleEn: 'Advanced Realistic Torn Paper',
+    range: '৪১–৫০',
+    descriptionBn: 'দুই ভাগে ছেঁড়া, গভীর রিপড, কার্লড এজ, ম্যাক্রো ফাইবার, ক্রাম্পল্ড ও প্রিমিয়াম ফটোরিয়ালিস্টিক।'
+  }
+];
+
+export const TORN_PAPER_STYLES: TornPaperStyle[] = [
+  // ⭐ Exclusive Styles (১–৭)
+  {
+    id: 'vector-torn-paper-frame',
+    number: 1,
+    nameBn: '১. ভেক্টর স্টাইল ছেঁড়া পেপার ফ্রেম',
+    nameEn: 'Vector Torn Paper Frame Cutout',
+    category: 'exclusive',
+    categoryBn: 'এক্সক্লুসিভ স্টাইল',
+    isExclusive: true,
+    descriptionBn: 'ফ্ল্যাট বা সেমি-রিয়েলিস্টিক 2D ভেক্টর স্টাইল। এর চারপাশের বর্ডার খাঁজকাটা থাকে, কিনারা বরাবর একটি সাদা লাইনিং থাকে এবং নিচ দিয়ে ড্রপ শ্যাডো দিয়ে কাটআউট ডেপথ তৈরি করা হয়। মাঝের অংশ ১০০% স্বচ্ছ।',
+    usageBn: 'ডিজিটাল ভেক্টর গ্রাফিক্স, ফটো ফ্রেম, কভার আর্ট ও পোস্টার।',
+    defaultParams: {
+      archetype: 'exclusive-vector-frame',
+      paperColor: '#fafaf9',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 48,
+      fiberDensity: 50,
+      fiberLength: 6,
+      paperThickness: 8,
+      shadowBlur: 16,
+      shadowOpacity: 0.38,
+      crumpleIntensity: 5,
+      textureGrain: 8
+    },
+    tags: ['vector torn paper frame', 'torn paper cutout border', 'white lined paper tear', 'flat vector torn frame', 'illustrator torn paper', 'clean torn frame mockup', 'png cutout frame']
+  },
+  {
+    id: 'rough-deckle-edge-frame',
+    number: 2,
+    nameBn: '২. রাফ টেক্সচার্ড/হ্যান্ডমেড পেপার ফ্রেম',
+    nameEn: 'Rough Deckle Edge Frame',
+    category: 'exclusive',
+    categoryBn: 'এক্সক্লুসিভ স্টাইল',
+    isExclusive: true,
+    descriptionBn: 'পুরনো বা মোটা হাতে তৈরি কাগজের মতো অনুভূতি দেয়। এর কিনারাগুলো স্বাভাবিকভাবে অসম, খাঁজযুক্ত এবং এতে দৃশ্যমান পেপার গ্রেইন বা ক্যানভাস টেক্সচার ও Bevel & Emboss পুরুত্ব থাকে।',
+    usageBn: 'আর্ট প্রিন্ট, সার্টিফিকেট, অ্যান্টিক ফ্রেম ও আমন্ত্রণপত্র।',
+    defaultParams: {
+      archetype: 'exclusive-deckle-frame',
+      paperColor: '#fbf9f4',
+      innerPulpColor: '#ffffff',
+      surfaceTexture: 'cotton',
+      tearRoughness: 58,
+      fiberDensity: 85,
+      fiberLength: 12,
+      paperThickness: 10,
+      shadowBlur: 22,
+      shadowOpacity: 0.42,
+      textureGrain: 35
+    },
+    tags: ['deckle edge frame', 'handmade pulp paper frame', 'rough textured paper', 'canvas paper frame', 'bevel paper edge', 'antique wedding frame', 'cotton deckle edge']
+  },
+  {
+    id: 'white-core-ripped-strip',
+    number: 3,
+    nameBn: '৩. হোয়াইট কোর রিপড পেপার স্ট্রিপ',
+    nameEn: 'Ripped Paper with Exposed White Core',
+    category: 'exclusive',
+    categoryBn: 'এক্সক্লুসিভ স্টাইল',
+    isExclusive: true,
+    descriptionBn: 'রঙিন কাগজের উপরের স্তর ছিঁড়ে গেলে ভেতরের সাদা কাগজের পাল্প বা ফাইবার উন্মুক্ত হয়ে যায়। রঙিন ও সাদা দুই স্তরের নিখুঁত কন্ট্রাস্ট ব্যানার ও হেডলাইন ফুটিয়ে তোলে।',
+    usageBn: 'ব্যানার, নোট, হেডলাইন হাইলাইটার ও মার্কেটিং পোস্টার।',
+    defaultParams: {
+      archetype: 'exclusive-white-core-strip',
+      paperColor: '#e11d48',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 60,
+      fiberDensity: 75,
+      fiberLength: 10,
+      paperThickness: 12,
+      shadowBlur: 20,
+      shadowOpacity: 0.4,
+      crumpleIntensity: 12
+    },
+    tags: ['white core torn paper', 'exposed pulp paper strip', 'colored ripped paper', 'headline paper strip', 'torn paper banner mockup', 'fiber core paper tear']
+  },
+  {
+    id: 'punctured-burst-hole',
+    number: 4,
+    nameBn: '৪. পাংচার্ড / বুর্স্ট পেপার হোল',
+    nameEn: 'Punctured Paper Hole Effect',
+    category: 'exclusive',
+    categoryBn: 'এক্সক্লুসিভ স্টাইল',
+    isExclusive: true,
+    descriptionBn: 'ভেতর থেকে কোনো কিছু ঠেলে বা আঘাত করে কাগজ ফুটো করলে কাগজের ত্রিভুজাকার টুকরোগুলো (Flaps) যেভাবে বাইরের দিকে মুচড়ে বের হয়ে আসে, এটি সেই থ্রি-ডি বার্স্ট ইফেক্ট।',
+    usageBn: 'প্রোডাক্ট রিভিল, সারপ্রাইজ অফার, স্পেশাল লঞ্চ ও ডায়নামিক বিজ্ঞাপন।',
+    defaultParams: {
+      archetype: 'exclusive-punctured-hole',
+      paperColor: '#ffffff',
+      innerPulpColor: '#f1f5f9',
+      tearRoughness: 65,
+      fiberDensity: 70,
+      fiberLength: 9,
+      paperThickness: 8,
+      shadowBlur: 26,
+      shadowOpacity: 0.48,
+      curlAngle: 45
+    },
+    tags: ['punctured paper hole', 'burst paper tear', 'ripped paper hole 3d', 'torn paper flaps', 'breakthrough paper', 'bullet hole paper', 'reveal paper opening']
+  },
+  {
+    id: 'kraft-cardboard-fiber-tear',
+    number: 5,
+    nameBn: '৫. কার্ডবোর্ড / ক্রাফট ফাইবার টিয়ার',
+    nameEn: 'Kraft Cardboard Torn Edge',
+    category: 'exclusive',
+    categoryBn: 'এক্সক্লুসিভ স্টাইল',
+    isExclusive: true,
+    descriptionBn: 'খয়েরি ক্রাফট পেপার বা মোটা প্যাকিং বক্স ছিঁড়লে যে খসখসে, স্পঞ্জের মতো আঁশালো কিনারা তৈরি হয়, এটি সেই ন্যাচারাল রাস্টিক টেক্সচার ও দীর্ঘ ফাইবারের মেলবন্ধন।',
+    usageBn: 'ইকো-ফ্রেন্ডলি প্যাকেজিং, রাস্টিক ব্র্যান্ডিং, লেবেল ও স্টিকার।',
+    defaultParams: {
+      archetype: 'exclusive-cardboard-tear',
+      paperColor: '#b08968',
+      innerPulpColor: '#dfc2a2',
+      surfaceTexture: 'kraft',
+      tearRoughness: 72,
+      fiberDensity: 90,
+      fiberLength: 16,
+      paperThickness: 14,
+      shadowBlur: 24,
+      shadowOpacity: 0.45,
+      textureGrain: 40
+    },
+    tags: ['kraft cardboard torn edge', 'cardboard ripped texture', 'rough packing paper', 'fibrous cardboard tear', 'spongy paper fiber', 'recycled cardboard mockup']
+  },
+  {
+    id: 'curled-edge-rip-banner',
+    number: 6,
+    nameBn: '৬. কার্লড এজ রিপ ব্যানার',
+    nameEn: '3D Curled Edge Paper Banner',
+    category: 'exclusive',
+    categoryBn: 'এক্সক্লুসিভ স্টাইল',
+    isExclusive: true,
+    descriptionBn: 'কাগজের ছেঁড়া প্রান্তগুলো কিছুটা ভাঁজ হয়ে বা রোল হয়ে সামনের দিকে বাঁকানো থাকে, যার ফলে নিচে গভীর ছায়া পড়ে এবং বাস্তবসম্মত থ্রি-ডি সিলিন্ডার কার্ল লুক আসে।',
+    usageBn: 'ওয়েবসাইট ব্যানার, রিবন, হেডলাইন ও মোশন ডিজাইন।',
+    defaultParams: {
+      archetype: 'exclusive-curled-banner',
+      paperColor: '#fdfbf7',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 45,
+      fiberDensity: 65,
+      fiberLength: 8,
+      paperThickness: 8,
+      curlAngle: 50,
+      shadowBlur: 28,
+      shadowOpacity: 0.48,
+      crumpleIntensity: 18
+    },
+    tags: ['3d curled edge banner', 'folded edge paper cutout', 'rolled ripped paper', 'curled banner mockup', 'floating paper ribbon', 'curled paper strip']
+  },
+  {
+    id: 'horizontal-rip-window',
+    number: 7,
+    nameBn: '৭. হরিজন্টাল রিপ উইন্ডো',
+    nameEn: 'Horizontal Torn Paper Backdrop',
+    category: 'exclusive',
+    categoryBn: 'এক্সক্লুসিভ স্টাইল',
+    isExclusive: true,
+    descriptionBn: 'উপরের এবং নিচের দুটি কাগজের মাঝের অংশ ছিঁড়ে আলাদা করে দেওয়া হয়, যাতে পেছনের ব্যাকগ্রাউন্ড বা টেক্সট স্পষ্টভাবে দেখা যায়। উভয় ধারের নিচে পাতলা সাদা রাফ লেয়ার ও গভীর শ্যাডো।',
+    usageBn: 'স্প্লিট পেপার রিভিল, ল্যান্ডিং পেজ ব্যাকড্রপ, ফ্যাশন ব্যানার ও কোলাজ।',
+    defaultParams: {
+      archetype: 'exclusive-horizontal-window',
+      paperColor: '#ffffff',
+      innerPulpColor: '#f1f5f9',
+      tearRoughness: 55,
+      fiberDensity: 75,
+      fiberLength: 10,
+      paperThickness: 8,
+      shadowBlur: 24,
+      shadowOpacity: 0.44
+    },
+    tags: ['horizontal torn paper window', 'split paper reveal', 'two side paper tear', 'backdrop ripped paper', 'reveal background tear', 'torn paper divider']
+  },
+
+  // 1-10: Basic Styles
+  {
+    id: 'classic-torn-paper',
+    number: 1,
+    nameBn: 'Classic Torn Paper',
+    nameEn: 'Classic Torn Paper',
+    category: 'basic',
+    categoryBn: 'বেসিক স্টাইল',
+    descriptionBn: 'সাদা কাগজের মাঝখানে অনিয়মিত ছেঁড়া প্রান্ত, সূক্ষ্ম ফাইবার ও হালকা প্রাকৃতিক টেক্সচার।',
+    usageBn: 'পোস্টার, গ্রাফিক ডিজাইন ও কোলাজ।',
+    defaultParams: {
+      paperColor: '#fafaf9',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 45,
+      fiberDensity: 55,
+      fiberLength: 8,
+      paperThickness: 5,
+      shadowBlur: 18,
+      shadowOpacity: 0.35,
+      crumpleIntensity: 15,
+      textureGrain: 12
+    },
+    tags: ['classic torn paper', 'torn paper sheet', 'ripped paper edge', 'paper fibers', 'white torn paper png', 'realistic paper tear', 'scrapbook paper', 'collage element']
+  },
+  {
+    id: 'horizontal-torn-strip',
+    number: 2,
+    nameBn: 'Horizontal Torn Strip',
+    nameEn: 'Horizontal Torn Strip',
+    category: 'basic',
+    categoryBn: 'বেসিক স্টাইল',
+    descriptionBn: 'লম্বা অনুভূমিক কাগজের টুকরা। ওপর ও নিচের প্রান্ত অসমানভাবে ছেঁড়া, মাঝের অংশ মসৃণ।',
+    usageBn: 'ব্যানার, শিরোনামের ব্যাকগ্রাউন্ড ও পোস্টার।',
+    defaultParams: {
+      paperColor: '#f8fafc',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 50,
+      fiberDensity: 60,
+      fiberLength: 9,
+      paperThickness: 6,
+      shadowBlur: 16,
+      shadowOpacity: 0.38,
+      crumpleIntensity: 10,
+      textureGrain: 14
+    },
+    tags: ['horizontal torn strip', 'ripped paper banner', 'paper tape strip', 'torn header background', 'paper ribbon isolated', 'white paper strip png']
+  },
+  {
+    id: 'vertical-torn-strip',
+    number: 3,
+    nameBn: 'Vertical Torn Strip',
+    nameEn: 'Vertical Torn Strip',
+    category: 'basic',
+    categoryBn: 'বেসিক স্টাইল',
+    descriptionBn: 'লম্বা উল্লম্ব কাগজের টুকরা। দুই পাশে আঁকাবাঁকা ছেঁড়া প্রান্ত ও নরম যোগাযোগ-ছায়া।',
+    usageBn: 'ম্যাগাজিন কোলাজ ও স্ক্র্যাপবুক।',
+    defaultParams: {
+      paperColor: '#f8fafc',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 55,
+      fiberDensity: 65,
+      fiberLength: 10,
+      paperThickness: 5,
+      shadowBlur: 20,
+      shadowOpacity: 0.35,
+      crumpleIntensity: 12,
+      textureGrain: 14
+    },
+    tags: ['vertical torn strip', 'long paper tear', 'magazine ripped edge', 'vertical paper banner', 'scrapbooking strip', 'editorial collage']
+  },
+  {
+    id: 'rough-rectangle-tear',
+    number: 4,
+    nameBn: 'Rough Rectangle Tear',
+    nameEn: 'Rough Rectangle Tear',
+    category: 'basic',
+    categoryBn: 'বেসিক স্টাইল',
+    descriptionBn: 'আয়তাকার কাগজের টুকরা। চারদিকে অসমান ছেঁড়া প্রান্ত এবং কোণগুলোতে স্বতন্ত্র ফাইবার।',
+    usageBn: 'পোস্টার ও পেপার কোলাজ।',
+    defaultParams: {
+      paperColor: '#fdfbf7',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 60,
+      fiberDensity: 70,
+      fiberLength: 9,
+      paperThickness: 6,
+      shadowBlur: 22,
+      shadowOpacity: 0.4,
+      crumpleIntensity: 20,
+      textureGrain: 16
+    },
+    tags: ['rough rectangle paper', 'rectangular paper tear', 'torn paper note', 'ripped cardstock', 'message card mockup', 'rough paper piece']
+  },
+  {
+    id: 'small-torn-paper-fragment',
+    number: 5,
+    nameBn: 'Small Torn Paper Fragment',
+    nameEn: 'Small Torn Paper Fragment',
+    category: 'basic',
+    categoryBn: 'বেসিক স্টাইল',
+    descriptionBn: 'ছোট, অনিয়মিত কাগজের টুকরা। একাধিক ক্ষুদ্র প্রান্ত, অসমান আকৃতি ও চারপাশে সূক্ষ্ম ছায়া।',
+    usageBn: 'কোলাজ, ক্রাফট ও ডেকোরেশন।',
+    defaultParams: {
+      paperColor: '#fafaf9',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 65,
+      fiberDensity: 60,
+      fiberLength: 7,
+      paperThickness: 4,
+      shadowBlur: 14,
+      shadowOpacity: 0.42,
+      crumpleIntensity: 25,
+      textureGrain: 15
+    },
+    tags: ['torn paper fragment', 'small paper scrap', 'paper confetti', 'ripped piece', 'scrapbook scrap', 'paper cut piece']
+  },
+  {
+    id: 'double-layer-torn-paper',
+    number: 6,
+    nameBn: 'Double-Layer Torn Paper',
+    nameEn: 'Double-Layer Torn Paper',
+    category: 'basic',
+    categoryBn: 'বেসিক স্টাইল',
+    descriptionBn: 'দুটি কাগজ একটির ওপর আরেকটি থাকবে। ওপরের কাগজের ছেঁড়া প্রান্তের নিচে দ্বিতীয় স্তর দৃশ্যমান।',
+    usageBn: 'স্ক্র্যাপবুক ও পোস্টার।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#f1f5f9',
+      layersCount: 2,
+      tearRoughness: 48,
+      fiberDensity: 65,
+      fiberLength: 9,
+      paperThickness: 7,
+      shadowBlur: 24,
+      shadowOpacity: 0.45,
+      crumpleIntensity: 15,
+      textureGrain: 12
+    },
+    tags: ['double layer torn paper', 'two layer paper tear', 'stacked ripped paper', 'multi layer collage', 'deep torn paper effect']
+  },
+  {
+    id: 'folded-torn-paper',
+    number: 7,
+    nameBn: 'Folded Torn Paper',
+    nameEn: 'Folded Torn Paper',
+    category: 'basic',
+    categoryBn: 'বেসিক স্টাইল',
+    descriptionBn: 'কাগজের একটি অংশ ভাঁজ করা। ভাঁজের রেখায় আলো ও ছায়া এবং ছেঁড়া প্রান্তে ফাইবার দৃশ্যমান।',
+    usageBn: 'এডিটোরিয়াল ডিজাইন ও বুকমার্ক।',
+    defaultParams: {
+      paperColor: '#fcfbf9',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 45,
+      fiberDensity: 60,
+      fiberLength: 8,
+      paperThickness: 6,
+      shadowBlur: 20,
+      shadowOpacity: 0.4,
+      crumpleIntensity: 45,
+      curlAngle: 30
+    },
+    tags: ['folded torn paper', 'creased ripped paper', 'paper fold crease', 'editorial folded sheet', 'paper bend shadow']
+  },
+  {
+    id: 'curved-torn-paper',
+    number: 8,
+    nameBn: 'Curved Torn Paper',
+    nameEn: 'Curved Torn Paper',
+    category: 'basic',
+    categoryBn: 'বেসিক স্টাইল',
+    descriptionBn: 'কাগজের টুকরার এক পাশ বাঁকানো। বাঁকানো অংশে পুরুত্ব ও নরম ছায়া এবং পৃষ্ঠে সূক্ষ্ম বলিরেখা।',
+    usageBn: 'ডায়নামিক কোলাজ ও কভার আর্ট।',
+    defaultParams: {
+      paperColor: '#f8fafc',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 52,
+      fiberDensity: 65,
+      fiberLength: 9,
+      paperThickness: 6,
+      shadowBlur: 22,
+      shadowOpacity: 0.38,
+      crumpleIntensity: 30,
+      curlAngle: 25
+    },
+    tags: ['curved torn paper', 'arched paper tear', 'curled paper piece', 'dynamic paper flow', 'flowing ripped paper']
+  },
+  {
+    id: 'crumpled-torn-paper',
+    number: 9,
+    nameBn: 'Crumpled Torn Paper',
+    nameEn: 'Crumpled Torn Paper',
+    category: 'basic',
+    categoryBn: 'বেসিক স্টাইল',
+    descriptionBn: 'ছেঁড়া কাগজে একাধিক স্বাভাবিক ভাঁজ। ভাঁজের উঁচু অংশে আলো এবং নিচু অংশে স্বাভাবিক ছায়া।',
+    usageBn: 'টেক্সচার অ্যাসেট ও পোস্টার ব্যাকগ্রাউন্ড।',
+    defaultParams: {
+      paperColor: '#f5f5f4',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 60,
+      fiberDensity: 70,
+      fiberLength: 8,
+      paperThickness: 5,
+      shadowBlur: 26,
+      shadowOpacity: 0.45,
+      crumpleIntensity: 80,
+      textureGrain: 25
+    },
+    tags: ['crumpled torn paper', 'wrinkled ripped paper', 'creased paper texture', 'damaged paper sheet', 'crumpled note mockup']
+  },
+  {
+    id: 'clean-center-rough-edge',
+    number: 10,
+    nameBn: 'Clean Center, Rough Edge',
+    nameEn: 'Clean Center, Rough Edge',
+    category: 'basic',
+    categoryBn: 'বেসিক স্টাইল',
+    descriptionBn: 'মাঝের অংশ পরিষ্কার সমতল, শুধু বাইরের প্রান্ত ছেঁড়া। ডিজাইনারদের টেক্সট বা গ্রাফিক বসানোর উপযুক্ত।',
+    usageBn: 'ডিজাইনারদের টেক্সট বা গ্রাফিক বসানোর জন্য।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 50,
+      fiberDensity: 65,
+      fiberLength: 8,
+      paperThickness: 5,
+      shadowBlur: 18,
+      shadowOpacity: 0.35,
+      crumpleIntensity: 5,
+      textureGrain: 8
+    },
+    tags: ['clean center paper', 'torn edge stationery', 'invitation paper blank', 'textbox ripped paper', 'design card mockup']
+  },
+
+  // 11-20: Edge & Fiber Styles
+  {
+    id: 'fine-fiber-edge',
+    number: 11,
+    nameBn: 'Fine Fiber Edge',
+    nameEn: 'Fine Fiber Edge',
+    category: 'edge-fiber',
+    categoryBn: 'এজ ও ফাইবার',
+    descriptionBn: 'সূক্ষ্ম, ছোট ছোট চুলের মতো কাগজের তন্তু। ফাইবারের ঘনত্ব বিভিন্ন জায়গায় প্রাকৃতিক বৈচিত্র্যময়।',
+    usageBn: 'প্রিমিয়াম আর্ট প্রিন্ট ও ফ্যাশন কোলাজ।',
+    defaultParams: {
+      paperColor: '#fdfbf7',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 40,
+      fiberDensity: 90,
+      fiberLength: 6,
+      paperThickness: 4,
+      shadowBlur: 16,
+      shadowOpacity: 0.35
+    },
+    tags: ['fine fiber edge', 'micro paper fibers', 'hairy paper edge', 'delicate torn edge', 'macro paper fibers']
+  },
+  {
+    id: 'long-fiber-edge',
+    number: 12,
+    nameBn: 'Long Fiber Edge',
+    nameEn: 'Long Fiber Edge',
+    category: 'edge-fiber',
+    categoryBn: 'এজ ও ফাইবার',
+    descriptionBn: 'ছেঁড়া প্রান্ত থেকে কিছু লম্বা তন্তু বেরিয়ে থাকবে। তন্তুগুলোর দৈর্ঘ্য ও দিক ভিন্ন এবং পুনরাবৃত্তিমুক্ত।',
+    usageBn: 'হ্যান্ডমেড ক্রাফট ও স্ক্র্যাপবুকিং।',
+    defaultParams: {
+      paperColor: '#fbfaf8',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 55,
+      fiberDensity: 75,
+      fiberLength: 18,
+      paperThickness: 5,
+      shadowBlur: 20,
+      shadowOpacity: 0.38
+    },
+    tags: ['long fiber paper', 'protruding fibers', 'mulberry paper edge', 'handmade torn paper', 'organic paper strands']
+  },
+  {
+    id: 'jagged-edge',
+    number: 13,
+    nameBn: 'Jagged Edge',
+    nameEn: 'Jagged Edge',
+    category: 'edge-fiber',
+    categoryBn: 'এজ ও ফাইবার',
+    descriptionBn: 'ধারালো, অনিয়মিত কাগজের প্রান্ত। ছোট ও বড় খাঁজের মিশ্রণে ভেতরের ও বাইরের ড্রামাটিক বৈসাদৃশ্য।',
+    usageBn: 'রক কনসার্ট পোস্টার ও গ্রাঞ্জ ব্যানার।',
+    defaultParams: {
+      paperColor: '#f8fafc',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 85,
+      fiberDensity: 60,
+      fiberLength: 10,
+      paperThickness: 7,
+      shadowBlur: 22,
+      shadowOpacity: 0.42
+    },
+    tags: ['jagged paper edge', 'sharp torn paper', 'aggressive paper tear', 'grunge ripped paper', 'spiky edge paper']
+  },
+  {
+    id: 'soft-ragged-edge',
+    number: 14,
+    nameBn: 'Soft Ragged Edge',
+    nameEn: 'Soft Ragged Edge',
+    category: 'edge-fiber',
+    categoryBn: 'এজ ও ফাইবার',
+    descriptionBn: 'নরম ও ছড়ানো প্রান্ত। ছোট ফাইবার ও মাইক্রো-ফ্রিঞ্জের সাথে সূক্ষ্ম আলো-ছায়া।',
+    usageBn: 'ওয়েডিং ইনভিটেশন ও মার্জিত ব্র্যান্ডিং।',
+    defaultParams: {
+      paperColor: '#faf8f5',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 35,
+      fiberDensity: 80,
+      fiberLength: 7,
+      paperThickness: 4,
+      shadowBlur: 15,
+      shadowOpacity: 0.3
+    },
+    tags: ['soft ragged edge', 'gentle torn paper', 'subtle ripped edge', 'elegant paper border', 'wedding torn stationery']
+  },
+  {
+    id: 'handmade-deckle-edge',
+    number: 15,
+    nameBn: 'Handmade Deckle Edge',
+    nameEn: 'Handmade Deckle Edge',
+    category: 'edge-fiber',
+    categoryBn: 'এজ ও ফাইবার',
+    descriptionBn: 'হাতে তৈরি কাগজের মতো অনিয়মিত প্রান্ত। সূক্ষ্ম তন্তুর সঙ্গে নরম ঢেউখেলানো খাঁটি ডেকেল আকৃতি।',
+    usageBn: 'আর্ট প্রিন্ট, সার্টিফিকেট ও আমন্ত্রণপত্র।',
+    defaultParams: {
+      paperColor: '#fbf9f4',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 42,
+      fiberDensity: 85,
+      fiberLength: 11,
+      paperThickness: 6,
+      shadowBlur: 18,
+      shadowOpacity: 0.34
+    },
+    tags: ['deckle edge paper', 'handmade paper deckle', 'watermarked edge', 'cotton deckle paper', 'fine art paper edge']
+  },
+  {
+    id: 'deep-notch-edge',
+    number: 16,
+    nameBn: 'Deep Notch Edge',
+    nameEn: 'Deep Notch Edge',
+    category: 'edge-fiber',
+    categoryBn: 'এজ ও ফাইবার',
+    descriptionBn: 'ছেঁড়া প্রান্তে গভীর খাঁজ থাকবে। বড় ও ছোট খাঁজের মধ্যে ভারসাম্য এবং খাঁজের পাশে দৃশ্যমান ফাইবার।',
+    usageBn: 'ম্যাগাজিন ফিচার ও ফ্যাশন পোস্টার।',
+    defaultParams: {
+      paperColor: '#f8fafc',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 75,
+      fiberDensity: 70,
+      fiberLength: 12,
+      paperThickness: 6,
+      shadowBlur: 24,
+      shadowOpacity: 0.4
+    },
+    tags: ['deep notch paper', 'heavy ripped edge', 'notched paper tear', 'dramatic paper cutout', 'extreme paper tear']
+  },
+  {
+    id: 'micro-tear-edge',
+    number: 17,
+    nameBn: 'Micro-Tear Edge',
+    nameEn: 'Micro-Tear Edge',
+    category: 'edge-fiber',
+    categoryBn: 'এজ ও ফাইবার',
+    descriptionBn: 'প্রান্তে খুব ছোট ছোট ছেঁড়া অংশ। দূর থেকে প্রান্ত পরিষ্কার মনে হলেও কাছে গেলে বাস্তব ফাইবার দৃশ্যমান।',
+    usageBn: 'ম্যাক্রো-টেক্সচার ও ফটোগ্রাফিক মকআপ।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 25,
+      fiberDensity: 95,
+      fiberLength: 4,
+      paperThickness: 3,
+      shadowBlur: 12,
+      shadowOpacity: 0.28
+    },
+    tags: ['micro tear paper', 'subtle paper tear', 'crisp torn border', 'photorealistic paper rim', 'sharp paper mockup']
+  },
+  {
+    id: 'layered-fiber-edge',
+    number: 18,
+    nameBn: 'Layered Fiber Edge',
+    nameEn: 'Layered Fiber Edge',
+    category: 'edge-fiber',
+    categoryBn: 'এজ ও ফাইবার',
+    descriptionBn: 'একাধিক কাগজের স্তর আলাদা হয়ে থাকবে। প্রতিটি স্তরের প্রান্ত আলাদা আকৃতির এবং মাঝে ছোট ছায়া।',
+    usageBn: 'স্ক্র্যাপবুকিং ও পেপারক্রাফট।',
+    defaultParams: {
+      paperColor: '#fafaf9',
+      innerPulpColor: '#f1f5f9',
+      layersCount: 2,
+      tearRoughness: 58,
+      fiberDensity: 75,
+      fiberLength: 10,
+      paperThickness: 8,
+      shadowBlur: 22,
+      shadowOpacity: 0.42
+    },
+    tags: ['layered fiber edge', 'delaminated paper edge', 'multi ply paper tear', 'corrugated paper tear', 'thick paper layers']
+  },
+  {
+    id: 'directional-fiber-edge',
+    number: 19,
+    nameBn: 'Directional Fiber Edge',
+    nameEn: 'Directional Fiber Edge',
+    category: 'edge-fiber',
+    categoryBn: 'এজ ও ফাইবার',
+    descriptionBn: 'কাগজের তন্তুগুলো একটি নির্দিষ্ট দিকে টানা। টানের দিক অনুসারে প্রান্তের গঠন বদলাবে।',
+    usageBn: 'ডায়নামিক পোস্টার ও অ্যাকশন কোলাজ।',
+    defaultParams: {
+      paperColor: '#f8fafc',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 62,
+      fiberDensity: 80,
+      fiberLength: 14,
+      paperThickness: 6,
+      shadowBlur: 18,
+      shadowOpacity: 0.38
+    },
+    tags: ['directional fiber edge', 'pulled paper grain', 'fiber grain direction', 'horizontal grain tear', 'sheared paper edge']
+  },
+  {
+    id: 'asymmetric-tear',
+    number: 20,
+    nameBn: 'Asymmetric Tear',
+    nameEn: 'Asymmetric Tear',
+    category: 'edge-fiber',
+    categoryBn: 'এজ ও ফাইবার',
+    descriptionBn: 'এক পাশ অন্য পাশের তুলনায় বেশি ছেঁড়া। একটি কোণে গভীর খাঁজ ও বিপরীত কোণে ছোট ফাইবার।',
+    usageBn: 'আধুনিক ম্যাগাজিন লেআউট ও কোলাজ।',
+    defaultParams: {
+      paperColor: '#fbfaf8',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 68,
+      fiberDensity: 70,
+      fiberLength: 10,
+      paperThickness: 5,
+      shadowBlur: 20,
+      shadowOpacity: 0.36
+    },
+    tags: ['asymmetric paper tear', 'irregular paper shape', 'unbalanced paper tear', 'diagonal paper cut', 'artistic paper rip']
+  },
+
+  // 21-30: Layered & Collage Styles
+  {
+    id: 'two-layer-collage',
+    number: 21,
+    nameBn: 'Two-Layer Collage',
+    nameEn: 'Two-Layer Collage',
+    category: 'layered-collage',
+    categoryBn: 'লেয়ার্ড ও কোলাজ',
+    descriptionBn: 'দুটি ভিন্ন কাগজ আংশিকভাবে একটির ওপর আরেকটি থাকবে। দুই কাগজের ছেঁড়া প্রান্ত, রং ও ছায়া আলাদা।',
+    usageBn: 'ফটো ফ্রেম ও সোশ্যাল মিডিয়া পোস্টার।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#f1f5f9',
+      layersCount: 2,
+      tearRoughness: 50,
+      fiberDensity: 65,
+      fiberLength: 8,
+      paperThickness: 7,
+      shadowBlur: 24,
+      shadowOpacity: 0.44
+    },
+    tags: ['two layer collage', 'double paper mockup', 'overlapped paper sheets', 'dual tone paper tear', 'scrapbook layering']
+  },
+  {
+    id: 'three-layer-paper-stack',
+    number: 22,
+    nameBn: 'Three-Layer Paper Stack',
+    nameEn: 'Three-Layer Paper Stack',
+    category: 'layered-collage',
+    categoryBn: 'লেয়ার্ড ও কোলাজ',
+    descriptionBn: 'তিনটি কাগজের স্তর একটির ওপর আরেকটি সাজানো থাকবে। প্রতিটি স্তরের প্রান্ত ও পুরুত্ব দৃশ্যমান।',
+    usageBn: 'ইনফোগ্রাফিক ব্যাকগ্রাউন্ড ও ফিচার গ্রাফিক।',
+    defaultParams: {
+      paperColor: '#f8fafc',
+      innerPulpColor: '#e2e8f0',
+      layersCount: 3,
+      tearRoughness: 55,
+      fiberDensity: 70,
+      fiberLength: 9,
+      paperThickness: 9,
+      shadowBlur: 28,
+      shadowOpacity: 0.48
+    },
+    tags: ['three layer paper stack', 'tri fold torn paper', 'triple layered paper', 'stacked paper sheets', '3d paper collage']
+  },
+  {
+    id: 'torn-paper-frame',
+    number: 23,
+    nameBn: 'Torn Paper Frame',
+    nameEn: 'Torn Paper Frame',
+    category: 'layered-collage',
+    categoryBn: 'লেয়ার্ড ও কোলাজ',
+    descriptionBn: 'মাঝখানে স্বচ্ছ খালি জায়গা থাকবে এবং চারদিকে ছেঁড়া কাগজের বর্ডার। মাঝের অংশে কোনো ফিল থাকবে না।',
+    usageBn: 'ফটো ফ্রেম, পোর্ট্রেট বর্ডার ও ইনস্টাগ্রাম ফ্রেম।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#f8fafc',
+      tearRoughness: 52,
+      fiberDensity: 75,
+      fiberLength: 8,
+      paperThickness: 6,
+      shadowBlur: 22,
+      shadowOpacity: 0.4
+    },
+    tags: ['torn paper frame', 'ripped paper border', 'transparent paper cutout window', 'photo border torn paper', 'collage picture frame']
+  },
+  {
+    id: 'torn-paper-window',
+    number: 24,
+    nameBn: 'Torn Paper Window',
+    nameEn: 'Torn Paper Window',
+    category: 'layered-collage',
+    categoryBn: 'লেয়ার্ড ও কোলাজ',
+    descriptionBn: 'একটি কাগজের মাঝখানে অনিয়মিত ছেঁড়া খোলা অংশ। কাগজের পুরুত্ব ও ভেতরের প্রান্তের ছায়া দৃশ্যমান।',
+    usageBn: 'প্রোডাক্ট রিভিল, টিজার পোস্টার ও ডিসপ্লে।',
+    defaultParams: {
+      paperColor: '#fafaf9',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 60,
+      fiberDensity: 70,
+      fiberLength: 9,
+      paperThickness: 7,
+      shadowBlur: 20,
+      shadowOpacity: 0.42
+    },
+    tags: ['torn paper window', 'ripped paper hole', 'paper peephole cutout', 'reveal background tear', 'torn hole png']
+  },
+  {
+    id: 'overlapping-paper-strips',
+    number: 25,
+    nameBn: 'Overlapping Paper Strips',
+    nameEn: 'Overlapping Paper Strips',
+    category: 'layered-collage',
+    categoryBn: 'লেয়ার্ড ও কোলাজ',
+    descriptionBn: 'কয়েকটি অনুভূমিক ও উল্লম্ব কাগজের স্ট্রিপ একে অপরকে অতিক্রম করবে। প্রতিটি স্ট্রিপের ছায়া আলাদা।',
+    usageBn: 'আর্ট ব্যানার ও ওয়েবসাইট হেডার।',
+    defaultParams: {
+      paperColor: '#fbfaf8',
+      innerPulpColor: '#ffffff',
+      layersCount: 3,
+      tearRoughness: 48,
+      fiberDensity: 65,
+      fiberLength: 8,
+      paperThickness: 6,
+      shadowBlur: 22,
+      shadowOpacity: 0.4
+    },
+    tags: ['overlapping paper strips', 'criss cross paper tape', 'woven paper strips', 'taped torn paper', 'banner paper ribbons']
+  },
+  {
+    id: 'floating-paper-layers',
+    number: 26,
+    nameBn: 'Floating Paper Layers',
+    nameEn: 'Floating Paper Layers',
+    category: 'layered-collage',
+    categoryBn: 'লেয়ার্ড ও কোলাজ',
+    descriptionBn: 'কাগজের স্তরগুলো সামান্য দূরত্বে ভাসমান অবস্থায় থাকবে। প্রতিটি স্তরের নিচে বিচ্ছিন্ন নরম ছায়া।',
+    usageBn: 'ত্রিমাত্রিক (3D) ডিজাইন ও আধুনিক ওয়েব গ্রাফিক্স।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#f1f5f9',
+      layersCount: 2,
+      tearRoughness: 45,
+      fiberDensity: 60,
+      fiberLength: 8,
+      paperThickness: 6,
+      shadowBlur: 35,
+      shadowOpacity: 0.32,
+      shadowDistance: 25
+    },
+    tags: ['floating paper layers', 'levitating paper sheet', '3d paper mockup', 'soft shadow paper drop', 'isometric paper tear']
+  },
+  {
+    id: 'peeling-paper-edge',
+    number: 27,
+    nameBn: 'Peeling Paper Edge',
+    nameEn: 'Peeling Paper Edge',
+    category: 'layered-collage',
+    categoryBn: 'লেয়ার্ড ও কোলাজ',
+    descriptionBn: 'কাগজের একটি অংশ ওপরের দিকে উঠে থাকবে। বাঁকানো অংশের নিচে গাঢ় ছায়া ও কাগজের পুরুত্ব দেখা যাবে।',
+    usageBn: 'ডিসকাউন্ট কুপন, স্টিকার ও ইন্টারেক্টিভ এলিমেন্ট।',
+    defaultParams: {
+      paperColor: '#fcfbf9',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 40,
+      fiberDensity: 65,
+      fiberLength: 7,
+      paperThickness: 8,
+      curlAngle: 45,
+      shadowBlur: 24,
+      shadowOpacity: 0.45
+    },
+    tags: ['peeling paper edge', 'curling paper corner', 'sticker peeling effect', 'rolled paper edge', 'peel off coupon paper']
+  },
+  {
+    id: 'torn-paper-corner',
+    number: 28,
+    nameBn: 'Torn Paper Corner',
+    nameEn: 'Torn Paper Corner',
+    category: 'layered-collage',
+    categoryBn: 'লেয়ার্ড ও কোলাজ',
+    descriptionBn: 'কাগজের একটি কোণ ছেঁড়া বা উঠে যাওয়া অবস্থায় থাকবে। কোণার ফাইবার ও নিচের স্তরের ছায়া স্পষ্ট।',
+    usageBn: 'পৃষ্ঠার অলংকরণ ও বুক পেজ ইফেক্ট।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#f8fafc',
+      tearRoughness: 55,
+      fiberDensity: 70,
+      fiberLength: 9,
+      paperThickness: 6,
+      shadowBlur: 18,
+      shadowOpacity: 0.38
+    },
+    tags: ['torn paper corner', 'ripped page corner', 'corner peel paper', 'page bookmark tear', 'book corner ripped']
+  },
+  {
+    id: 'split-paper-panel',
+    number: 29,
+    nameBn: 'Split Paper Panel',
+    nameEn: 'Split Paper Panel',
+    category: 'layered-collage',
+    categoryBn: 'লেয়ার্ড ও কোলাজ',
+    descriptionBn: 'একটি কাগজের মাঝখানে ছেঁড়া বিভাজন থাকবে। দুই অংশের প্রান্ত অসমান এবং মাঝখানে স্বচ্ছ ফাঁক থাকবে।',
+    usageBn: 'তুলনামূলক বিজ্ঞাপন ও বিফোর-আফটার লেআউট।',
+    defaultParams: {
+      paperColor: '#fafaf9',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 52,
+      fiberDensity: 65,
+      fiberLength: 8,
+      paperThickness: 6,
+      shadowBlur: 20,
+      shadowOpacity: 0.38
+    },
+    tags: ['split paper panel', 'divided paper sheet', 'parted torn paper', 'gap paper tear', 'halved paper page']
+  },
+  {
+    id: 'irregular-collage-fragments',
+    number: 30,
+    nameBn: 'Irregular Collage Fragments',
+    nameEn: 'Irregular Collage Fragments',
+    category: 'layered-collage',
+    categoryBn: 'লেয়ার্ড ও কোলাজ',
+    descriptionBn: 'বিভিন্ন আকৃতির কয়েকটি কাগজের টুকরা আলাদা অবস্থানে থাকবে। প্রতিটি টুকরার প্রান্ত ও টেক্সচার আলাদা।',
+    usageBn: 'মুডবোর্ড, স্ক্র্যাপবুক কিট ও আর্ট কোলাজ।',
+    defaultParams: {
+      paperColor: '#fbfaf8',
+      innerPulpColor: '#ffffff',
+      layersCount: 3,
+      tearRoughness: 65,
+      fiberDensity: 70,
+      fiberLength: 8,
+      paperThickness: 5,
+      shadowBlur: 16,
+      shadowOpacity: 0.4
+    },
+    tags: ['irregular collage fragments', 'moodboard paper kit', 'scrap pieces bundle', 'scattered torn papers', 'paper collage elements']
+  },
+
+  // 31-40: Paper Material & Color Styles
+  {
+    id: 'white-copier-paper',
+    number: 31,
+    nameBn: 'White Copier Paper',
+    nameEn: 'White Copier Paper',
+    category: 'materials',
+    categoryBn: 'পেপার ম্যাটেরিয়াল',
+    descriptionBn: 'সাধারণ সাদা অফিস পেপারের মতো মসৃণ পৃষ্ঠ, সূক্ষ্ম ফাইবার এবং পরিষ্কার ছেঁড়া প্রান্ত।',
+    usageBn: 'অফিস ডকুমেন্ট ও আধুনিক ক্লিন মকআপ।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#ffffff',
+      surfaceTexture: 'smooth',
+      textureGrain: 8,
+      tearRoughness: 42,
+      fiberDensity: 60,
+      fiberLength: 7,
+      paperThickness: 4,
+      shadowBlur: 15,
+      shadowOpacity: 0.32
+    },
+    tags: ['white copier paper', 'office paper tear', 'a4 white paper rip', 'printer paper edge', 'clean white paper png']
+  },
+  {
+    id: 'cream-paper',
+    number: 32,
+    nameBn: 'Cream Paper',
+    nameEn: 'Cream Paper',
+    category: 'materials',
+    categoryBn: 'পেপার ম্যাটেরিয়াল',
+    descriptionBn: 'হালকা ক্রিম রঙের কাগজ, সূক্ষ্ম পৃষ্ঠের দানা এবং নরম মার্জিত প্রান্ত।',
+    usageBn: 'বইয়ের পাতা, সাহিত্য প্রকাশনা ও ফ্যাশন।',
+    defaultParams: {
+      paperColor: '#fefce8',
+      innerPulpColor: '#ffffff',
+      surfaceTexture: 'smooth',
+      textureGrain: 14,
+      tearRoughness: 45,
+      fiberDensity: 70,
+      fiberLength: 8,
+      paperThickness: 5,
+      shadowBlur: 18,
+      shadowOpacity: 0.34
+    },
+    tags: ['cream paper', 'ivory torn paper', 'off white paper sheet', 'novel book page', 'warm tone paper']
+  },
+  {
+    id: 'kraft-paper',
+    number: 33,
+    nameBn: 'Kraft Paper',
+    nameEn: 'Kraft Paper',
+    category: 'materials',
+    categoryBn: 'পেপার ম্যাটেরিয়াল',
+    descriptionBn: 'বাদামি ক্রাফট কাগজের তন্তুযুক্ত পৃষ্ঠ এবং কিছুটা রুক্ষ ও শক্ত ছেঁড়া প্রান্ত।',
+    usageBn: 'ইকো-ফ্রেন্ডলি ব্র্যান্ডিং, প্যাকেজিং ও ক্রাফট।',
+    defaultParams: {
+      paperColor: '#c8a27a',
+      innerPulpColor: '#dfc2a2',
+      surfaceTexture: 'kraft',
+      textureGrain: 30,
+      tearRoughness: 65,
+      fiberDensity: 80,
+      fiberLength: 12,
+      paperThickness: 7,
+      shadowBlur: 22,
+      shadowOpacity: 0.42
+    },
+    tags: ['kraft paper tear', 'brown cardboard paper', 'eco kraft sheet', 'rustic paper ripped', 'cardboard fiber edge']
+  },
+  {
+    id: 'recycled-paper',
+    number: 34,
+    nameBn: 'Recycled Paper',
+    nameEn: 'Recycled Paper',
+    category: 'materials',
+    categoryBn: 'পেপার ম্যাটেরিয়াল',
+    descriptionBn: 'পুনর্ব্যবহারযোগ্য কাগজের মতো অনিয়মিত ফাইবার ও সূক্ষ্ম রঙিন কণাযুক্ত প্রাকৃতিক পৃষ্ঠ।',
+    usageBn: 'পরিবেশবান্ধব বিজ্ঞাপন ও আর্ট ডিজাইন।',
+    defaultParams: {
+      paperColor: '#e7e5e4',
+      innerPulpColor: '#f5f5f4',
+      surfaceTexture: 'recycled',
+      textureGrain: 35,
+      tearRoughness: 58,
+      fiberDensity: 85,
+      fiberLength: 10,
+      paperThickness: 6,
+      shadowBlur: 20,
+      shadowOpacity: 0.38
+    },
+    tags: ['recycled paper', 'speckled paper texture', 'grey recycled paper', 'flecked paper tear', 'sustainable paper png']
+  },
+  {
+    id: 'black-paper',
+    number: 35,
+    nameBn: 'Black Paper',
+    nameEn: 'Black Paper',
+    category: 'materials',
+    categoryBn: 'পেপার ম্যাটেরিয়াল',
+    descriptionBn: 'ম্যাট কালো কাগজ, যেখানে আলো-ছায়া ও সাদা প্রান্তের সেলুলোজ ফাইবার অত্যন্ত স্পষ্ট।',
+    usageBn: 'বিলাসবহুল ড্রামাটিক ডিজাইন ও নাইট মকআপ।',
+    defaultParams: {
+      paperColor: '#18181b',
+      innerPulpColor: '#e4e4e7',
+      surfaceTexture: 'cardstock',
+      textureGrain: 18,
+      tearRoughness: 55,
+      fiberDensity: 75,
+      fiberLength: 9,
+      paperThickness: 6,
+      shadowBlur: 22,
+      shadowOpacity: 0.55
+    },
+    tags: ['black paper tear', 'dark ripped paper', 'matte black paper', 'black cardstock edge', 'luxury dark paper']
+  },
+  {
+    id: 'colored-construction-paper',
+    number: 36,
+    nameBn: 'Colored Construction Paper',
+    nameEn: 'Colored Construction Paper',
+    category: 'materials',
+    categoryBn: 'পেপার ম্যাটেরিয়াল',
+    descriptionBn: 'উজ্জ্বল রঙিন মোটা কাগজ, দৃশ্যমান পুরুত্ব ও ফাইবারযুক্ত অসমান খাঁজ।',
+    usageBn: 'বাচ্চাদের ক্রাফট, উৎসবের ডিজাইন ও শিক্ষা।',
+    defaultParams: {
+      paperColor: '#f43f5e',
+      innerPulpColor: '#ffe4e6',
+      surfaceTexture: 'cardstock',
+      textureGrain: 20,
+      tearRoughness: 60,
+      fiberDensity: 70,
+      fiberLength: 10,
+      paperThickness: 8,
+      shadowBlur: 22,
+      shadowOpacity: 0.42
+    },
+    tags: ['construction paper', 'colored paper tear', 'pastel cardstock rip', 'craft paper children', 'pigment paper edge']
+  },
+  {
+    id: 'newsprint-paper',
+    number: 37,
+    nameBn: 'Newsprint Paper',
+    nameEn: 'Newsprint Paper',
+    category: 'materials',
+    categoryBn: 'পেপার ম্যাটেরিয়াল',
+    descriptionBn: 'সংবাদপত্রের মতো পাতলা, কিছুটা রুক্ষ ও মৃদু ধূসর কম উজ্জ্বল কাগজের পৃষ্ঠ।',
+    usageBn: 'জার্নালিজম কোলাজ ও রেট্রো নিউজ ব্যানার।',
+    defaultParams: {
+      paperColor: '#e2e8f0',
+      innerPulpColor: '#f1f5f9',
+      surfaceTexture: 'smooth',
+      textureGrain: 22,
+      tearRoughness: 50,
+      fiberDensity: 65,
+      fiberLength: 7,
+      paperThickness: 3,
+      shadowBlur: 14,
+      shadowOpacity: 0.3
+    },
+    tags: ['newsprint paper tear', 'newspaper ripped edge', 'vintage newsprint', 'press paper scrap', 'daily gazette paper']
+  },
+  {
+    id: 'handmade-cotton-paper',
+    number: 38,
+    nameBn: 'Handmade Cotton Paper',
+    nameEn: 'Handmade Cotton Paper',
+    category: 'materials',
+    categoryBn: 'পেপার ম্যাটেরিয়াল',
+    descriptionBn: 'তুলার ফাইবারযুক্ত হাতে তৈরি কাগজের মতো পুরু ও নরম প্রাকৃতিক প্রান্ত।',
+    usageBn: 'বিয়ের কার্ড, ক্যালিগ্রাফি ও ওয়াটারকালার ব্যাকগ্রাউন্ড।',
+    defaultParams: {
+      paperColor: '#faf8f5',
+      innerPulpColor: '#ffffff',
+      surfaceTexture: 'recycled',
+      textureGrain: 25,
+      tearRoughness: 40,
+      fiberDensity: 90,
+      fiberLength: 14,
+      paperThickness: 9,
+      shadowBlur: 20,
+      shadowOpacity: 0.35
+    },
+    tags: ['cotton paper', 'rag paper edge', 'calligraphy paper deckle', 'watercolour cotton sheet', 'heavy weight cotton paper']
+  },
+  {
+    id: 'vintage-aged-paper',
+    number: 39,
+    nameBn: 'Vintage Aged Paper',
+    nameEn: 'Vintage Aged Paper',
+    category: 'materials',
+    categoryBn: 'পেপার ম্যাটেরিয়াল',
+    descriptionBn: 'পুরোনো ভিন্টেজ কাগজের মতো সোনালি বাদামি আভা ও প্রাকৃতিক অনিয়মিত প্রান্ত।',
+    usageBn: 'ঐতিহাসিক পোস্টার, সার্টিফিকেট ও অ্যান্টিক থিম।',
+    defaultParams: {
+      paperColor: '#fef3c7',
+      innerPulpColor: '#fef9c3',
+      surfaceTexture: 'vintage',
+      textureGrain: 28,
+      tearRoughness: 55,
+      fiberDensity: 75,
+      fiberLength: 9,
+      paperThickness: 5,
+      shadowBlur: 20,
+      shadowOpacity: 0.4
+    },
+    tags: ['vintage aged paper', 'parchment paper tear', 'antique ripped paper', 'old manuscript edge', 'sepia paper piece']
+  },
+  {
+    id: 'thick-art-paper',
+    number: 40,
+    nameBn: 'Thick Art Paper',
+    nameEn: 'Thick Art Paper',
+    category: 'materials',
+    categoryBn: 'পেপার ম্যাটেরিয়াল',
+    descriptionBn: 'মোটা ৩০০gsm আর্ট পেপারের মতো শক্ত প্রান্ত, দৃশ্যমান পুরুত্ব ও নিয়ন্ত্রিত ড্রপ শ্যাডো।',
+    usageBn: 'গ্যালারি প্রিন্ট ও প্রফেশনাল পোর্টফোলিও।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#f8fafc',
+      surfaceTexture: 'cardstock',
+      textureGrain: 16,
+      tearRoughness: 48,
+      fiberDensity: 65,
+      fiberLength: 8,
+      paperThickness: 12,
+      shadowBlur: 26,
+      shadowOpacity: 0.45
+    },
+    tags: ['thick art paper', '300gsm paper tear', 'heavy cardstock rip', 'bristol board edge', 'fine art board paper']
+  },
+
+  // 41-50: Advanced Realistic Torn Paper
+  {
+    id: 'paper-torn-in-half',
+    number: 41,
+    nameBn: 'Paper Torn in Half',
+    nameEn: 'Paper Torn in Half',
+    category: 'advanced',
+    categoryBn: 'অ্যাডভান্সড রিয়ালিস্টিক',
+    descriptionBn: 'একটি কাগজ দুই ভাগে ছেঁড়া। দুই পাশের প্রান্ত সামঞ্জস্যপূর্ণ তবে হুবহু মিরর ইমেজ নয়।',
+    usageBn: 'কন্ট্রাস্ট কোলাজ, ড্রামাটিক স্প্লিট ও ম্যাগাজিন।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#f1f5f9',
+      tearRoughness: 60,
+      fiberDensity: 75,
+      fiberLength: 9,
+      paperThickness: 6,
+      shadowBlur: 22,
+      shadowOpacity: 0.38
+    },
+    tags: ['paper torn in half', 'two halves ripped paper', 'split page torn', 'matching paper tears', 'divided paper sheet']
+  },
+  {
+    id: 'deep-ripped-paper',
+    number: 42,
+    nameBn: 'Deep Ripped Paper',
+    nameEn: 'Deep Ripped Paper',
+    category: 'advanced',
+    categoryBn: 'অ্যাডভান্সড রিয়ালিস্টিক',
+    descriptionBn: 'গভীর ছেঁড়া অংশ, যেখানে কাগজের একাধিক তন্তু ও অসমান পুরুত্বের অভ্যন্তরীণ স্তর স্পষ্ট।',
+    usageBn: 'উত্তেজনাপূর্ণ ট্রেলার ব্যানার ও ফ্যাশন আর্ট।',
+    defaultParams: {
+      paperColor: '#fafaf9',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 88,
+      fiberDensity: 80,
+      fiberLength: 14,
+      paperThickness: 8,
+      shadowBlur: 25,
+      shadowOpacity: 0.42
+    },
+    tags: ['deep ripped paper', 'heavy jagged tear', 'violent paper rip', 'deep cut paper edge', 'raw paper fibers']
+  },
+  {
+    id: 'curled-torn-edge',
+    number: 43,
+    nameBn: 'Curled Torn Edge',
+    nameEn: 'Curled Torn Edge',
+    category: 'advanced',
+    categoryBn: 'অ্যাডভান্সড রিয়ালিস্টিক',
+    descriptionBn: 'ছেঁড়া প্রান্ত সামান্য বাঁকানো বা কুঁচকানো। বাঁকের ভেতরে মৃদু অন্ধকার এবং বাইরে নরম হাইলাইট।',
+    usageBn: 'স্ক্র্যাপবুক ও বাস্তবসম্মত স্টুডিও অ্যাসেট।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#f8fafc',
+      curlAngle: 35,
+      tearRoughness: 50,
+      fiberDensity: 70,
+      fiberLength: 8,
+      paperThickness: 7,
+      shadowBlur: 24,
+      shadowOpacity: 0.44
+    },
+    tags: ['curled torn edge', 'rolled ripped paper', 'bent paper border', '3d curled page', 'realistic paper curl']
+  },
+  {
+    id: 'shadow-rich-paper-tear',
+    number: 44,
+    nameBn: 'Shadow-Rich Paper Tear',
+    nameEn: 'Shadow-Rich Paper Tear',
+    category: 'advanced',
+    categoryBn: 'অ্যাডভান্সড রিয়ালিস্টিক',
+    descriptionBn: 'কাগজের পুরুত্ব বোঝানোর জন্য প্রান্তে গভীর ও নিয়ন্ত্রিত কন্টাক্ট ছায়া, কিন্তু কোনো কালো দাগ নেই।',
+    usageBn: 'উচ্চমানের 3D মকআপ ও কভার ডিজাইন।',
+    defaultParams: {
+      paperColor: '#fafaf9',
+      innerPulpColor: '#ffffff',
+      shadowBlur: 32,
+      shadowOpacity: 0.52,
+      shadowDistance: 18,
+      tearRoughness: 52,
+      fiberDensity: 70,
+      fiberLength: 8,
+      paperThickness: 8
+    },
+    tags: ['shadow rich paper tear', 'contact shadow paper', 'deep ambient occlusion paper', 'floating ripped sheet', 'high contrast paper']
+  },
+  {
+    id: 'macro-fiber-detail',
+    number: 45,
+    nameBn: 'Macro Fiber Detail',
+    nameEn: 'Macro Fiber Detail',
+    category: 'advanced',
+    categoryBn: 'অ্যাডভান্সড রিয়ালিস্টিক',
+    descriptionBn: 'কাগজের প্রান্তের খুব কাছ থেকে দেখা সেলুলোজ ফাইবারের বিস্তারিত গঠন ও মাইক্রো-তন্তু।',
+    usageBn: 'ম্যাক্রো-টেক্সচার অ্যাসেট ও হাইপার-রিয়ালিস্টিক ব্যানার।',
+    defaultParams: {
+      paperColor: '#fdfbf7',
+      innerPulpColor: '#ffffff',
+      fiberDensity: 95,
+      fiberLength: 20,
+      tearRoughness: 45,
+      paperThickness: 7,
+      shadowBlur: 18,
+      shadowOpacity: 0.35
+    },
+    tags: ['macro fiber detail', 'close up paper fiber', 'cellulose strands paper', 'ultra detailed paper edge', 'fibrous torn paper']
+  },
+  {
+    id: 'crumpled-torn-fragment',
+    number: 46,
+    nameBn: 'Crumpled Torn Fragment',
+    nameEn: 'Crumpled Torn Fragment',
+    category: 'advanced',
+    categoryBn: 'অ্যাডভান্সড রিয়ালিস্টিক',
+    descriptionBn: 'ছেঁড়া কাগজে একাধিক অনিয়মিত ভাঁজ। প্রতিটি ভাঁজে স্বাভাবিক আলো-ছায়া ও অসমান প্রান্ত।',
+    usageBn: 'রাফ আর্টওয়ার্ক ও বাস্তবসম্মত ময়লা কাগজের টেক্সচার।',
+    defaultParams: {
+      paperColor: '#f5f5f4',
+      innerPulpColor: '#ffffff',
+      crumpleIntensity: 90,
+      textureGrain: 25,
+      tearRoughness: 70,
+      fiberDensity: 75,
+      fiberLength: 9,
+      paperThickness: 5,
+      shadowBlur: 28,
+      shadowOpacity: 0.46
+    },
+    tags: ['crumpled torn fragment', 'creased scrap paper', 'crushed paper tear', 'wrinkle paper texture', 'damaged note png']
+  },
+  {
+    id: 'perforation-meets-tear',
+    number: 47,
+    nameBn: 'Perforation Meets Tear',
+    nameEn: 'Perforation Meets Tear',
+    category: 'advanced',
+    categoryBn: 'অ্যাডভান্সড রিয়ালিস্টিক',
+    descriptionBn: 'কাগজের এক অংশে ছিদ্রযুক্ত (Perforated) ডট এবং বাকি অংশে অসমাপ্ত ছেঁড়া প্রান্ত।',
+    usageBn: 'টিকেট, কুপন, রসিদ ও পার্সেল ভাউচার।',
+    defaultParams: {
+      paperColor: '#ffffff',
+      innerPulpColor: '#f8fafc',
+      tearRoughness: 48,
+      fiberDensity: 65,
+      fiberLength: 7,
+      paperThickness: 5,
+      shadowBlur: 16,
+      shadowOpacity: 0.34
+    },
+    tags: ['perforated paper tear', 'ticket stub torn', 'coupon tear line', 'stamped perforation paper', 'receipt torn edge']
+  },
+  {
+    id: 'thin-tissue-paper-tear',
+    number: 48,
+    nameBn: 'Thin Tissue Paper Tear',
+    nameEn: 'Thin Tissue Paper Tear',
+    category: 'advanced',
+    categoryBn: 'অ্যাডভান্সড রিয়ালিস্টিক',
+    descriptionBn: 'পাতলা টিস্যু বা ট্রেসিং পেপারের মতো মৃদু আলোভেদ্য প্রভাব, সূক্ষ্ম বলিরেখা ও নরম প্রান্ত।',
+    usageBn: 'উপহারের মোড়ক, বিউটি প্রোডাক্ট ও সূক্ষ্ম লেয়ারিং।',
+    defaultParams: {
+      paperColor: '#f8fafc',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 35,
+      fiberDensity: 80,
+      fiberLength: 5,
+      paperThickness: 2,
+      shadowBlur: 10,
+      shadowOpacity: 0.22,
+      crumpleIntensity: 35
+    },
+    tags: ['tissue paper tear', 'tracing paper ripped', 'thin gift paper', 'translucent paper edge', 'delicate tissue sheet']
+  },
+  {
+    id: 'thick-cardstock-tear',
+    number: 49,
+    nameBn: 'Thick Cardstock Tear',
+    nameEn: 'Thick Cardstock Tear',
+    category: 'advanced',
+    categoryBn: 'অ্যাডভান্সড রিয়ালিস্টিক',
+    descriptionBn: 'মোটা কার্ডস্টকের কাগজ, যেখানে ছেঁড়া প্রান্তে পুরুত্ব এবং অভ্যন্তরীণ স্তর দৃশ্যমান।',
+    usageBn: 'বোর্ডিং পাস, বিজনেস কার্ড ও শক্ত পোস্টার।',
+    defaultParams: {
+      paperColor: '#f8fafc',
+      innerPulpColor: '#ffffff',
+      paperThickness: 14,
+      tearRoughness: 52,
+      fiberDensity: 70,
+      fiberLength: 8,
+      shadowBlur: 28,
+      shadowOpacity: 0.48,
+      shadowDistance: 12
+    },
+    tags: ['thick cardstock tear', 'cardboard edge tear', 'rigid paper rip', 'heavy stock paper', 'business card torn']
+  },
+  {
+    id: 'premium-photorealistic-torn-paper',
+    number: 50,
+    nameBn: 'Premium Photorealistic Torn Paper',
+    nameEn: 'Premium Photorealistic Torn Paper',
+    category: 'advanced',
+    categoryBn: 'অ্যাডভান্সড রিয়ালিস্টিক',
+    descriptionBn: 'সর্বোচ্চ বিস্তারিত স্টাইল: অনিয়মিত স্বাভাবিক ছেঁড়া প্রান্ত, সূক্ষ্ম ফাইবার, পৃষ্ঠের মাইক্রো-টেক্সচার, পুরুত্ব, নরম আলো-ছায়া ও পরিষ্কার Alpha Transparency।',
+    usageBn: 'অ্যাডোবি স্টকের জন্য বাণিজ্যিকভাবে ব্যবহারের সেরা মাস্টারপিস অ্যাসেট।',
+    defaultParams: {
+      paperColor: '#fcfbf9',
+      innerPulpColor: '#ffffff',
+      tearRoughness: 55,
+      fiberDensity: 88,
+      fiberLength: 10,
+      paperThickness: 7,
+      shadowBlur: 24,
+      shadowOpacity: 0.4,
+      crumpleIntensity: 25,
+      textureGrain: 18
+    },
+    tags: ['premium torn paper', 'photorealistic ripped paper', 'hyperrealistic paper edge', 'adobe stock best seller', '4k paper tear png', 'realistic paper asset']
+  }
+];
